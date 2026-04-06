@@ -10,13 +10,13 @@ const CandidateForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Enviamos el nombre y el partido al backend
+      //envia el nombre y el partido al backend
       await API.post('/candidates', { name, party });
       
       alert('Candidato registrado con éxito');
       setName('');
       setParty('');
-      // Opcional: redirigir al dashboard para ver cómo quedó
+      //redirigir al dashboar
       navigate('/dashboard'); 
     } catch (error) {
       alert('Error al registrar candidato: ' + (error.response?.data?.message || 'Error de servidor'));
@@ -25,13 +25,13 @@ const CandidateForm = () => {
 
   return (
     <div style={{ padding: '30px', textAlign: 'center' }}>
-      <h2>Registrar Nuevo Candidato 👤</h2>
+      <h2>Registrar Nuevo Candidato</h2>
       <form onSubmit={handleSubmit} style={{ display: 'inline-block', textAlign: 'left', border: '1px solid #ddd', padding: '20px', borderRadius: '8px' }}>
         <label>Nombre del Candidato:</label><br/>
         <input 
           type="text" 
           value={name}
-          placeholder="Ej: Juan Fernando" 
+          placeholder="Nombre Completo" 
           onChange={(e) => setName(e.target.value)} 
           required 
           style={{ width: '250px', marginBottom: '15px', padding: '8px' }}
@@ -41,7 +41,7 @@ const CandidateForm = () => {
         <input 
           type="text" 
           value={party}
-          placeholder="Ej: Partido de la Tecnología" 
+          placeholder="Partido del candidato" 
           onChange={(e) => setParty(e.target.value)} 
           required 
           style={{ width: '250px', marginBottom: '15px', padding: '8px' }}

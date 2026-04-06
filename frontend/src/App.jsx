@@ -13,7 +13,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin/candidates" element={<CandidateForm />} />
         <Route path="/register" element={<Register />} />
-        {/* Redirigir por defecto al login */}
+        {/* redirigir por defecto al login */}
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>

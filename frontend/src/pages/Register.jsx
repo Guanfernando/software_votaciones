@@ -11,11 +11,11 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      // Enviamos los datos al endpoint de creación de votantes
+      // enviamos los datos al endpoint de creación de votantes
       await API.post('/voters', { name, email, password });
       
-      alert('¡Usuario registrado con éxito! Ahora puedes iniciar sesión.');
-      navigate('/login'); // Redirigimos al login tras el éxito
+      alert('Usuario registrado con éxito.');
+      navigate('/login'); // Redirigimos al login
     } catch (error) {
       alert('Error en el registro: ' + (error.response?.data?.message || 'Error de conexión'));
     }

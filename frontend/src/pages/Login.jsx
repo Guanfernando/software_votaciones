@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import API from '../services/api'; // El que creamos antes
+import API from '../services/api';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -13,11 +13,10 @@ const Login = () => {
     try {
       const { data } = await API.post('/voters/login', { email, password });
       
-      // Guardamos el token para futuras peticiones
       localStorage.setItem('token', data.token);
       
       alert('¡Bienvenido!');
-      navigate('/dashboard'); // Nos vamos a la zona de votación
+      navigate('/dashboard'); 
     } catch (error) {
       alert('Error en el login: ' + error.response?.data?.message || 'Error de conexión');
     }

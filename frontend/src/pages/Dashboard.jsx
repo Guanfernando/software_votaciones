@@ -23,8 +23,8 @@ const Dashboard = () => {
     try {
       await API.post('/votes', { candidateId });
       alert('¡Voto registrado con éxito!');
-      // Aquí podrías redirigir o deshabilitar los botones para que no vote dos veces
     } catch (error) {
+      //evita votar 2 veces
       alert(error.response?.data?.message || 'Error al votar');
     }
   };
@@ -33,7 +33,7 @@ const Dashboard = () => {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>Resgistra tu Voto 🗳️</h1>
+      <h1>Resgistra tu Voto</h1>
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
         {candidates.map(candidate => (
           <div key={candidate.id} style={{ border: '1px solid #ccc', padding: '15px', borderRadius: '8px', width: '200px' }}>

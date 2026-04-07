@@ -14,8 +14,8 @@ const Register = () => {
       // enviamos los datos al endpoint de creación de votantes
       await API.post('/voters', { name, email, password });
       
-      alert('Usuario registrado con éxito.');
-      navigate('/login'); // Redirigimos al login
+      alert('Usuario registrado con exito.');
+      navigate('/login'); // redirigimos al login
     } catch (error) {
       alert('Error en el registro: ' + (error.response?.data?.message || 'Error de conexión'));
     }

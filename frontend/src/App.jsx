@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/admin/candidates" element={<CandidateForm />} />
+        <Route path="/admin/candidates" element={<CandidateForm />} /> //solo acceso desde la URL para crear candidatos
         <Route path="/register" element={<Register />} />
         {/* redirigir por defecto al login */}
         <Route path="*" element={<Navigate to="/login" />} />
